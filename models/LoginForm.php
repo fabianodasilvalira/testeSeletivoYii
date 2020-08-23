@@ -36,6 +36,19 @@ class LoginForm extends Model
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Nome',
+            'password' => 'Senha',
+          
+        ];
+    }
+
+    /**
      * Validates the password.
      * This method serves as the inline validation for password.
      *
@@ -48,7 +61,7 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Nome ou senha inválidos');
             }
         }
     }
@@ -64,20 +77,6 @@ class LoginForm extends Model
         }
         return false;
     }
-
-    // /**
-    //  * Finds user by [[username]]
-    //  *
-    //  * @return User|null
-    //  */
-    // public function getUser()
-    // {
-    //     if ($this->_user === false) {
-    //         $this->_user = User::findByUsername($this->username);
-    //     }
-
-    //     return $this->_user;
-    // }
 
     /**
      * Finds user by [[email]]
