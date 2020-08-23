@@ -31,9 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div style="color:#999;margin:1em 0">
                     Não sou cadastrado! <?= Html::a('Cadastre-se!', ['site/signup']) ?>.
                 </div>
-                <div style="color:#999;margin:1em 0">
-                    Para entrar no sistema use: <p>Nome: administrador </br>Senha: administrador.</p>
-                </div>
+               
                 
                 <div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

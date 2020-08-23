@@ -39,7 +39,7 @@ AppAsset::register($this);
         Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
-                ['label' => 'Home', 'url' => ['/alunos/create']],
+             
                 ['label' => 'Alunos', 'url' => ['/alunos/index']],
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -61,38 +61,6 @@ AppAsset::register($this);
     );
     NavBar::end();
 
-
-    // NavBar::begin([
-    //     'brandLabel' => Yii::$app->name,
-        
-    //     'brandUrl' => Yii::$app->homeUrl,
-    //     'options' => [
-    //         'class' => 'navbar-inverse navbar-fixed-top',
-    //     ],
-    // ]);
-    // echo Nav::widget([
-    //     'options' => ['class' => 'navbar-nav navbar-right'],
-    //     'items' => [
-    //         ['label' => 'Home', 'url' => ['/alunos/create']],
-    //         ['label' => 'Alunos', 'url' => ['/alunos/index']],
-      
-            
-    //         Yii::$app->user->isGuest ? (
-    //             ['label' => 'Login', 'url' => ['/site/login']]
-    //         ) : (
-    //             '<li>'
-    //             . Html::beginForm(['/site/logout'], 'post')
-    //             . Html::submitButton(
-    //                 'Logout (' . Yii::$app->user->identity->username . ')',
-    //                 ['class' => 'btn btn-link logout']
-    //             )
-    //             . Html::endForm()
-    //             . '</li>'
-    //         )
-    //     ],
-    // ]);
-    // NavBar::end();
-
     ?>
 
     <div class="container">
@@ -106,7 +74,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Fabiano Lira <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

@@ -24,10 +24,10 @@ class AlunosController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['update', 'delete'],
+                'only' => [ 'update', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['update', 'delete'],
+                        'actions' => [ 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -50,6 +50,10 @@ class AlunosController extends Controller
     {
         $searchModel = new AlunosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        if (Yii::$app->user->isGuest)
+            return $this->redirect('create');
+           
 
         return $this->render('index', [
             'searchModel' => $searchModel,
